@@ -9,7 +9,7 @@ final class DataStore {
     
     static let shared = DataStore()
     
-    private let preset = [
+    let preset = [
         "pop",
         "slideLeft",
         "slideRight",
@@ -39,7 +39,7 @@ final class DataStore {
         "swing"
     ]
     
-    private let curves = [
+    let curves = [
         "easeIn",
         "easeOut",
         "easeInOut",
@@ -71,11 +71,11 @@ final class DataStore {
         "easeInOutBack"
     ]
     
-    private let force = Double.random(in: 1...5)
+    let force = Double.random(in: 1...5)
     
-    private let duration = Double.random(in: 0.5...5)
+    let duration = Double.random(in: 0.5...5)
     
-    private let delay = 0.0
+    let delay = 0.0
     
     private init() {}
 }
