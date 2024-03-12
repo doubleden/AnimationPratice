@@ -13,6 +13,7 @@ struct Animation {
     let delay: Double
     
     static func getRandomAnimation() -> Animation {
+        
         let data = DataStore.shared
         
         let randomPreset = data.preset.shuffled()
