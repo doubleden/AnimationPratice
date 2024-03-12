@@ -7,8 +7,6 @@
 
 final class DataStore {
     
-    static let shared = DataStore()
-    
     let preset = [
         "pop",
         "slideLeft",
@@ -71,11 +69,13 @@ final class DataStore {
         "easeInOutBack"
     ]
     
-    let force = Double.random(in: 1...5)
+    let force = Double.random(in: 1...3)
     
-    let duration = Double.random(in: 0.5...5)
+    let duration = Double.random(in: 1...3)
     
-    let delay = 0.0
+    let scaleX = Double.random(in: 1...3)
     
-    private init() {}
+    let xAxis = Double.random(in: -100...100)
+    
+    let yAxis = Double.random(in: -100...100)
 }

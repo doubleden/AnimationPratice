@@ -8,13 +8,16 @@
 struct Animation {
     let preset: String
     let curve: String
+    
     let force: Double
     let duration: Double
-    let delay: Double
+    let scaleX: Double
+    let xAxis: Double
+    let yAxis: Double
     
     static func getRandomAnimation() -> Animation {
         
-        let data = DataStore.shared
+        let data = DataStore()
         
         let randomPreset = data.preset.shuffled()
         let randomCurves = data.curves.shuffled()
@@ -24,7 +27,9 @@ struct Animation {
             curve: randomCurves.first ?? "",
             force: data.force,
             duration: data.duration,
-            delay: data.delay
+            scaleX: data.scaleX,
+            xAxis: data.xAxis,
+            yAxis: data.yAxis
         )
         
         return randomAnimation

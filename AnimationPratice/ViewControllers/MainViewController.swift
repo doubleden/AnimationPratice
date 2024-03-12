@@ -11,18 +11,55 @@ import SpringAnimation
 final class MainViewController: UIViewController {
 
     @IBOutlet var mainView: SpringView!
-    @IBOutlet var configAnimationLabels: [UILabel]!
+    
+    @IBOutlet var presetLabel: UILabel!
+    @IBOutlet var curveLabel: UILabel!
+    @IBOutlet var forceLabel: UILabel!
+    @IBOutlet var durationLabel: UILabel!
+    @IBOutlet var scaleLabel: UILabel!
+    @IBOutlet var xAxisLabel: UILabel!
+    @IBOutlet var yAxisLabel: UILabel!
+    
+    private var animation = Animation.getRandomAnimation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         mainView.layer.cornerRadius = 10
+        updateLabelsForNextAnimation()
     }
 
     @IBAction func actionButtonDidTapped(_ sender: UIButton) {
-        let animation = Animation.getRandomAnimation()
+        updateLabelsForNextAnimation()
         
+        mainView.animation = animation.preset
+        mainView.curve = animation.curve
+        mainView.force = animation.force
+        mainView.duration = animation.duration
+        mainView.scaleX = animation.scaleX
+        mainView.x = animation.xAxis
+        mainView.y = animation.yAxis
+        mainView.animate()
         
+        animation = Animation.getRandomAnimation()
+        
+        sender.setTitle("Run \(animation.preset)", for: .normal)
     }
-    
 }
 
+// MARK: - Private Methods
+private extension MainViewController {
+    func string(from number: Double) -> String {
+        String(format: "%.2f", number)
+    }
+    
+    func updateLabelsForNextAnimation() {
+        presetLabel.text = "preset: \(animation.preset)"
+        curveLabel.text = "curve : \(animation.curve)"
+        forceLabel.text = "force: \(string(from: animation.force))"
+        durationLabel.text = "duration: \(string(from: animation.duration))"
+        scaleLabel.text = "scale X: \(string(from: animation.scaleX))"
+        xAxisLabel.text = "x: \(string(from: animation.xAxis))"
+        yAxisLabel.text = "y: \(string(from: animation.yAxis))"
+    }
+}
