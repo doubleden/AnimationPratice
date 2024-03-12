@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="hcv-CE-VCb">
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="hcv-CE-VCb" customClass="SpringView" customModule="SpringAnimation">
                                 <rect key="frame" x="46.666666666666657" y="129" width="300" height="169"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AEQ-jP-U3W">
@@ -63,11 +63,6 @@
                                     <constraint firstAttribute="trailing" secondItem="AEQ-jP-U3W" secondAttribute="trailing" constant="16" id="sUf-VU-UTG"/>
                                     <constraint firstAttribute="height" constant="169" id="y8L-yU-8Nl"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7d-ZB-DQd">
                                 <rect key="frame" x="127.66666666666669" y="567.66666666666663" width="138" height="46"/>
@@ -82,6 +77,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jue-nT-Hf9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -94,6 +92,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="E7d-ZB-DQd" secondAttribute="bottom" multiplier="4:3" id="qqa-H8-JIO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainView" destination="hcv-CE-VCb" id="7S0-HX-Jeo"/>
+                        <outletCollection property="configAnimationLabels" destination="kQW-U4-lYp" collectionClass="NSMutableArray" id="Hyi-lh-DWF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
