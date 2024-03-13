@@ -26,11 +26,10 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         
         mainView.layer.cornerRadius = 10
-        updateLabelsForNextAnimation()
+        updateAnimationLabels()
     }
 
     @IBAction func actionButtonDidTapped(_ sender: UIButton) {
-        updateLabelsForNextAnimation()
         
         mainView.animation = animation.preset
         mainView.curve = animation.curve
@@ -41,8 +40,9 @@ final class MainViewController: UIViewController {
         mainView.y = animation.yAxis
         mainView.animate()
         
-        animation = Animation.getRandomAnimation()
+        updateAnimationLabels()
         
+        animation = Animation.getRandomAnimation()
         sender.setTitle("Run \(animation.preset)", for: .normal)
     }
 }
@@ -53,7 +53,7 @@ private extension MainViewController {
         String(format: "%.2f", number)
     }
     
-    func updateLabelsForNextAnimation() {
+    func updateAnimationLabels() {
         presetLabel.text = "preset: \(animation.preset)"
         curveLabel.text = "curve : \(animation.curve)"
         forceLabel.text = "force: \(string(from: animation.force))"
