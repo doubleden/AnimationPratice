@@ -69,11 +69,11 @@ final class DataStore {
         "easeInOutBack"
     ]
     
-    let force = Double.random(in: 1...3)
+    let force = Double.random(in: 1...5)
     
     let duration = Double.random(in: 1...3)
     
-    let scaleX = Double.random(in: 1...3)
+    let rotate = Double.random(in: 1...20)
     
     let xAxis = Double.random(in: -100...100)
     

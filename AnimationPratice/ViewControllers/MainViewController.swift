@@ -16,7 +16,7 @@ final class MainViewController: UIViewController {
     @IBOutlet var curveLabel: UILabel!
     @IBOutlet var forceLabel: UILabel!
     @IBOutlet var durationLabel: UILabel!
-    @IBOutlet var scaleLabel: UILabel!
+    @IBOutlet var rotateLabel: UILabel!
     @IBOutlet var xAxisLabel: UILabel!
     @IBOutlet var yAxisLabel: UILabel!
     
@@ -36,7 +36,7 @@ final class MainViewController: UIViewController {
         mainView.curve = animation.curve
         mainView.force = animation.force
         mainView.duration = animation.duration
-        mainView.scaleX = animation.scaleX
+        mainView.rotate = animation.rotate
         mainView.x = animation.xAxis
         mainView.y = animation.yAxis
         mainView.animate()
@@ -58,7 +58,7 @@ private extension MainViewController {
         curveLabel.text = "curve : \(animation.curve)"
         forceLabel.text = "force: \(string(from: animation.force))"
         durationLabel.text = "duration: \(string(from: animation.duration))"
-        scaleLabel.text = "scale X: \(string(from: animation.scaleX))"
+        rotateLabel.text = "rotate: \(string(from: animation.rotate))"
         xAxisLabel.text = "x: \(string(from: animation.xAxis))"
         yAxisLabel.text = "y: \(string(from: animation.yAxis))"
     }

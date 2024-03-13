@@ -111,7 +111,7 @@
                         <outlet property="forceLabel" destination="6QS-7r-zUL" id="eat-K2-RYM"/>
                         <outlet property="mainView" destination="hcv-CE-VCb" id="7S0-HX-Jeo"/>
                         <outlet property="presetLabel" destination="kQW-U4-lYp" id="fQS-G8-4an"/>
-                        <outlet property="scaleLabel" destination="9eF-4s-sRk" id="Dwy-Dy-4sf"/>
+                        <outlet property="rotateLabel" destination="9eF-4s-sRk" id="Dwy-Dy-4sf"/>
                         <outlet property="xAxisLabel" destination="zu2-Ia-8os" id="kYf-BZ-9yH"/>
                         <outlet property="yAxisLabel" destination="Sex-KH-LgM" id="dLg-9s-GAz"/>
                     </connections>

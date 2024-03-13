@@ -11,7 +11,7 @@ struct Animation {
     
     let force: Double
     let duration: Double
-    let scaleX: Double
+    let rotate: Double
     let xAxis: Double
     let yAxis: Double
     
@@ -27,7 +27,7 @@ struct Animation {
             curve: randomCurves.first ?? "",
             force: data.force,
             duration: data.duration,
-            scaleX: data.scaleX,
+            rotate: data.rotate,
             xAxis: data.xAxis,
             yAxis: data.yAxis
         )
