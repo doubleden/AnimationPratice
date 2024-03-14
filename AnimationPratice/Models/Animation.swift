@@ -15,6 +15,18 @@ struct Animation {
     let xAxis: Double
     let yAxis: Double
     
+    var description: String {
+        """
+        preset: \(preset)
+        curve : \(curve)
+        force: \(string(from: force))
+        duration: \(string(from: duration))
+        rotate: \(string(from: rotate))
+        x: \(string(from: xAxis))
+        y: \(string(from: yAxis))
+        """
+    }
+    
     static func getRandomAnimation() -> Animation {
         
         let data = DataStore.shared
@@ -33,5 +45,9 @@ struct Animation {
         )
         
         return randomAnimation
+    }
+    
+    private func string(from number: Double) -> String {
+        String(format: "%.2f", number)
     }
 }

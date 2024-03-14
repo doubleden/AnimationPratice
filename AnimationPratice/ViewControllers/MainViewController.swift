@@ -11,14 +11,8 @@ import SpringAnimation
 final class MainViewController: UIViewController {
 
     @IBOutlet var mainView: SpringView!
+    @IBOutlet var configAnimationLabel: UILabel!
     
-    @IBOutlet var presetLabel: UILabel!
-    @IBOutlet var curveLabel: UILabel!
-    @IBOutlet var forceLabel: UILabel!
-    @IBOutlet var durationLabel: UILabel!
-    @IBOutlet var rotateLabel: UILabel!
-    @IBOutlet var xAxisLabel: UILabel!
-    @IBOutlet var yAxisLabel: UILabel!
     
     private var animation = Animation.getRandomAnimation()
     
@@ -26,7 +20,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         
         mainView.layer.cornerRadius = 10
-        updateAnimationLabels()
+        configAnimationLabel.text = animation.description
     }
 
     @IBAction func actionButtonDidTapped(_ sender: UIButton) {
@@ -40,26 +34,9 @@ final class MainViewController: UIViewController {
         mainView.y = animation.yAxis
         mainView.animate()
         
-        updateAnimationLabels()
+        configAnimationLabel.text = animation.description
         
         animation = Animation.getRandomAnimation()
         sender.setTitle("Run \(animation.preset)", for: .normal)
-    }
-}
-
-// MARK: - Private Methods
-private extension MainViewController {
-    func string(from number: Double) -> String {
-        String(format: "%.2f", number)
-    }
-    
-    func updateAnimationLabels() {
-        presetLabel.text = "preset: \(animation.preset)"
-        curveLabel.text = "curve : \(animation.curve)"
-        forceLabel.text = "force: \(string(from: animation.force))"
-        durationLabel.text = "duration: \(string(from: animation.duration))"
-        rotateLabel.text = "rotate: \(string(from: animation.rotate))"
-        xAxisLabel.text = "x: \(string(from: animation.xAxis))"
-        yAxisLabel.text = "y: \(string(from: animation.yAxis))"
     }
 }
