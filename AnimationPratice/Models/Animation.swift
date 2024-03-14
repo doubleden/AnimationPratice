@@ -17,7 +17,7 @@ struct Animation {
     
     static func getRandomAnimation() -> Animation {
         
-        let data = DataStore()
+        let data = DataStore.shared
         
         let randomPreset = data.preset.shuffled()
         let randomCurves = data.curves.shuffled()
@@ -25,11 +25,11 @@ struct Animation {
         let randomAnimation = Animation(
             preset: randomPreset.first ?? "",
             curve: randomCurves.first ?? "",
-            force: data.force,
-            duration: data.duration,
-            rotate: data.rotate,
-            xAxis: data.xAxis,
-            yAxis: data.yAxis
+            force: Double.random(in: 1...5),
+            duration: Double.random(in: 1...3),
+            rotate: Double.random(in: 1...20),
+            xAxis: Double.random(in: -100...100),
+            yAxis: Double.random(in: -100...100)
         )
         
         return randomAnimation
