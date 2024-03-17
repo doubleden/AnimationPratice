@@ -17,7 +17,7 @@ final class MainViewController: UIViewController {
         }
     }
     
-    private var animation = Animation.getRandomAnimation()
+    private var animation = Animation.randomAnimation
 
     @IBAction func actionButtonDidTapped(_ sender: UIButton) {
         
@@ -32,7 +32,7 @@ final class MainViewController: UIViewController {
         
         configAnimationLabel.text = animation.description
         
-        animation = Animation.getRandomAnimation()
+        animation = Animation.randomAnimation
         sender.setTitle("Run \(animation.preset)", for: .normal)
     }
 }
