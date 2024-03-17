@@ -11,17 +11,13 @@ import SpringAnimation
 final class MainViewController: UIViewController {
 
     @IBOutlet var mainView: SpringView!
-    @IBOutlet var configAnimationLabel: UILabel!
-    
+    @IBOutlet var configAnimationLabel: UILabel! {
+        didSet {
+            configAnimationLabel.text = animation.description
+        }
+    }
     
     private var animation = Animation.getRandomAnimation()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        mainView.layer.cornerRadius = 10
-        configAnimationLabel.text = animation.description
-    }
 
     @IBAction func actionButtonDidTapped(_ sender: UIButton) {
         
